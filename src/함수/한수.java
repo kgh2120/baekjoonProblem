@@ -1,10 +1,11 @@
+package 함수;
+
 import java.util.Scanner;
 
-public class Main {
-
+public class 한수 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Main m = new Main();
+		한수 m = new 한수();
 		int score = 0;
 		int count = sc.nextInt();
 		
