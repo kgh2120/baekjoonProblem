@@ -1,44 +1,24 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		Scanner sc = new Scanner(System.in);
+		int testCase = sc.nextInt();
 		
-		try {
-			String condition = br.readLine();
-			String[] conditions =condition.split(" ");
-			int dayH = Integer.parseInt(conditions[0]);
-			int nightH = Integer.parseInt(conditions[1]);
-			int goal = Integer.parseInt(conditions[2]);
+		for(int i = 0; i<testCase; i++) {
 			
-			System.out.println(findPath(dayH,nightH,goal,0));
+			String condition = sc.nextLine();
+			String [] conditions = condition.split(" ");
+			int x = Integer.parseInt(conditions[0]);
+			int y = Integer.parseInt(conditions[1]);
 			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			int range = y-x;
+			
+			
 		}
 		
-	
-	}
-	
-	public static int findPath(int dayH,int nightH, int goal, int depth) {
-		if(goal<=0) {
-			return -1;
-		}
-		if( (dayH-nightH)*(depth-1)+nightH < goal && (depth)*(dayH-nightH)+nightH >= goal) {
-			return depth;
-		}else {
-			return findPath(dayH,nightH,goal,depth+1);
-		}
-		
-		
+
 	}
 
 }
